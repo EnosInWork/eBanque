@@ -239,7 +239,7 @@ AddEventHandler('eBanking:makeLoan', function (tk, playerId, montant, taux, nbEc
 	TriggerEvent('esx_addonaccount:getSharedAccount', Config.SocietyName, function(account)
 		if account.money >= montant then
 			account.removeMoney(montant)
-			xPlayer.addMoney(montant)
+			xTarget.addMoney(montant)
 			MySQL.Async.execute('INSERT INTO bank_lent_money(bank_lent_money.firstname, bank_lent_money.lastname, bank_lent_money.amount, bank_lent_money.rate, bank_lent_money.remainDeadlines, bank_lent_money.deadlines, bank_lent_money.amountNextDeadline, bank_lent_money.alreadyPaid, bank_lent_money.timeLeft, bank_lent_money.timeBeforeDeadline, bank_lent_money.clientID, bank_lent_money.advisorFirstname, bank_lent_money.advisorLastname, bank_lent_money.status) VALUES((SELECT users.firstname FROM `users` WHERE users.identifier = @playGiven), (SELECT users.lastname FROM `users` WHERE users.identifier = @playGiven), @mont, @taux, @nbEche, @nbEche, @premEche, "0", @jours, @jours, @playGiven, (SELECT users.firstname FROM `users` WHERE users.identifier = @playGiver), (SELECT users.lastname FROM `users` WHERE users.identifier = @playGiver), "Ouvert");', 
 			{
 				['@mont']   = montant,
@@ -247,13 +247,13 @@ AddEventHandler('eBanking:makeLoan', function (tk, playerId, montant, taux, nbEc
 				['@nbEche'] = nbEche,
 				['@jours'] = jours,
 				['@premEche'] = premEche,
-				['@playGiven']   = xPlayer.identifier,
+				['@playGiven']   = xTarget.identifier,
 				['@playGiver']   = xPlayer.identifier
 			},
 			function ()
 			end)
-			TriggerClientEvent('esx:showNotification', xPlayer.source, "Prêt d'une somme de " .. montant2 .. "$ alloué à " .. xPlayer.name)
-			eLogsDiscord("[Credit-Bancaire] "..xPlayer.getName().." a fait un crédit de "..montant2.."$ à "..xPlayer.name, Config.logs.CreditBank)	
+			TriggerClientEvent('esx:showNotification', xPlayer.source, "Prêt d'une somme de " .. montant2 .. "$ alloué à " .. xTarget.name)
+			eLogsDiscord("[Credit-Bancaire] "..xPlayer.getName().." a fait un crédit de "..montant2.."$ à "..xTarget.name, Config.logs.CreditBank)	
 		else
 			TriggerClientEvent('esx:showNotification', xPlayer.source, "La banque n'a pas assez d'argent.")
 		end	
