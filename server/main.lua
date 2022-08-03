@@ -170,7 +170,7 @@ end, false)
 
 ESX.RegisterServerCallback('eBanking:GetHistorique', function(source, cb, target)
 	local xPlayer = ESX.GetPlayerFromId(source)
-	MySQL.Async.fetchAll('SELECT Montant, time, id FROM banking_historique WHERE identifier = @identifier', {
+	MySQL.Async.fetchAll('SELECT Montant, time, id, type FROM banking_historique WHERE identifier = @identifier', {
 		['@identifier'] = xPlayer.identifier
 	}, function(result) 
 		cb(result)
@@ -179,15 +179,16 @@ end)
 
 
 RegisterNetEvent('eBanking:PutHistorique')
-AddEventHandler('eBanking:PutHistorique', function(tk, playerId, Montant, time)   
+AddEventHandler('eBanking:PutHistorique', function(tk, playerId, type, Montant, time)   
 	local xPlayer = ESX.GetPlayerFromId(source)  
 	if (Token ~= tk) then
 		DropPlayer(xPlayer.source, "Cheat")
 		return
 	end
     local timeShift = 1 * 60 * 60   
-		MySQL.Async.execute('INSERT INTO banking_historique (identifier, Montant, time) VALUES (@identifier, @Montant, @time)', { 
-        ['@identifier'] = xPlayer.identifier,                               
+		MySQL.Async.execute('INSERT INTO banking_historique (identifier, type, Montant, time) VALUES (@identifier, @type, @Montant, @time)', { 
+        ['@identifier'] = xPlayer.identifier,                             
+        ['@type'] = type,   
         ['@Montant'] = Montant, 
         ['@time'] = os.date('%d-%m-%Y %H:%M:%S', os.time() + timeShift),
     }, function(rowsChanged)            
