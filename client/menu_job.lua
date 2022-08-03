@@ -236,19 +236,19 @@ function OpenBankingJob()
 
             RageUI.IsVisible(Credit_MAIN, true, true, true, function()
 
-                local closestPlayer, closestDistance = ESX.Game.GetClosestPlayer()
-
                 RageUI.Line()
 
-                if closestPlayer == -1 or closestDistance > 5.0 then
+                local closestPlayer, closestDistance = ESX.Game.GetClosestPlayer()
+                        
+                if closestPlayer == -1 or closestDistance > 3.0 then
+                    RageUI.ButtonWithStyle("Créé un crédit", "Personne proche de vous",  {RightBadge = RageUI.BadgeStyle.Lock}, false, function(Hovered, Active, Selected)
+                    end) 
+                else
                     RageUI.ButtonWithStyle("Créé un crédit", nil,  {RightLabel = "→→"}, true, function(Hovered, Active, Selected)
                         if Selected then
                             CreateCredit()
                         end
                     end)
-                else
-                    RageUI.ButtonWithStyle("Créé un crédit", "Personne proche de vous",  {RightBadge = RageUI.BadgeStyle.Lock}, false, function(Hovered, Active, Selected)
-                    end) 
                 end
 
                 RageUI.ButtonWithStyle("Liste des crédits", nil,  {RightLabel = "→→"}, not cooldown, function(Hovered, Active, Selected)
