@@ -26,7 +26,6 @@ CREATE TABLE banking_historique (
   id int(11) NOT NULL,
   identifier varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
   Montant varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT '2',
-  type varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT '',
   time varchar(50) DEFAULT '0',
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
