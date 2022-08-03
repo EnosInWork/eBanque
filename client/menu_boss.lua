@@ -39,7 +39,7 @@ function menudubuigboss()
 
             RageUI.ButtonWithStyle("Retirer de l'argent",nil, {RightLabel = "→→"}, not cooldown, function(Hovered, Active, Selected)
                 if Selected then
-                    local amount = KeyboardInput("Montant", "", "", 10)
+                    local amount = KeyboardInput("Montant", "", 10)
                     amount = tonumber(amount)
                     if amount == nil then
                         RageUI.Popup({message = "[~r~Problème~s~]\nMontant invalide"})
@@ -52,7 +52,7 @@ function menudubuigboss()
 
             RageUI.ButtonWithStyle("Déposer de l'argent",nil, {RightLabel = "→→"}, not cooldown, function(Hovered, Active, Selected)
                 if Selected then
-                    local amount = KeyboardInput("Montant", "", "", 10)
+                    local amount = KeyboardInput("Montant", "", 10)
                     amount = tonumber(amount)
                     if amount == nil then
                         RageUI.Popup({message = "[~r~Problème~s~]\nMontant invalide"})
