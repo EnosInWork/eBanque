@@ -240,7 +240,7 @@ function OpenBankingJob()
                 RageUI.Line()
 
                         
-                if closestPlayer == -1 or closestDistance > 3.0 then
+                if closestPlayer ~= -1 and closestDistance < 3.0 then
                     RageUI.ButtonWithStyle("Créé un crédit", nil,  {RightLabel = "→→"}, true, function(Hovered, Active, Selected)
                         if Selected then
                             CreateCredit()
@@ -339,7 +339,7 @@ function OpenBankingJob()
 
                 RageUI.Line()
 
-                if closestPlayer == -1 or closestDistance > 3.0 then
+                if closestPlayer ~= -1 and closestDistance < 3.0 then
                     RageUI.ButtonWithStyle("Créé un livret", nil,  {RightLabel = "→→"}, true, function(Hovered, Active, Selected)
                         if Selected then
                             CreateLivret()
