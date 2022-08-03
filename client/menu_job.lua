@@ -241,14 +241,14 @@ function OpenBankingJob()
 
                         
                 if closestPlayer == -1 or closestDistance > 3.0 then
-                    RageUI.ButtonWithStyle("Créé un crédit", "Personne proche de vous",  {RightBadge = RageUI.BadgeStyle.Lock}, false, function(Hovered, Active, Selected)
-                    end) 
-                else
                     RageUI.ButtonWithStyle("Créé un crédit", nil,  {RightLabel = "→→"}, true, function(Hovered, Active, Selected)
                         if Selected then
                             CreateCredit()
                         end
                     end)
+                else
+                    RageUI.ButtonWithStyle("Créé un crédit", "Personne proche de vous",  {RightBadge = RageUI.BadgeStyle.Lock}, false, function(Hovered, Active, Selected)
+                    end) 
                 end
 
                 RageUI.ButtonWithStyle("Liste des crédits", nil,  {RightLabel = "→→"}, not cooldown, function(Hovered, Active, Selected)
@@ -340,14 +340,14 @@ function OpenBankingJob()
                 RageUI.Line()
 
                 if closestPlayer == -1 or closestDistance > 3.0 then
-                    RageUI.ButtonWithStyle("Créé un livret", "Personne proche de vous",  {RightBadge = RageUI.BadgeStyle.Lock}, false, function(Hovered, Active, Selected)
-                    end) 
-                else
                     RageUI.ButtonWithStyle("Créé un livret", nil,  {RightLabel = "→→"}, true, function(Hovered, Active, Selected)
                         if Selected then
                             CreateLivret()
                         end
                     end)
+                else
+                    RageUI.ButtonWithStyle("Créé un livret", "Personne proche de vous",  {RightBadge = RageUI.BadgeStyle.Lock}, false, function(Hovered, Active, Selected)
+                    end) 
                 end
 
                 RageUI.ButtonWithStyle("Liste des livrets", nil,  {RightLabel = "→→"}, not cooldown, function(Hovered, Active, Selected)
