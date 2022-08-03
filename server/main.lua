@@ -247,7 +247,7 @@ AddEventHandler('eBanking:makeLoan', function (tk, playerId, montant, taux, nbEc
 				['@nbEche'] = nbEche,
 				['@jours'] = jours,
 				['@premEche'] = premEche,
-				['@playGiven']   = xPlayer.identifier,
+				['@playGiven']   = xTarget.identifier,
 				['@playGiver']   = xPlayer.identifier
 			},
 			function ()
