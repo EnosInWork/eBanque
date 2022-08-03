@@ -22,19 +22,34 @@ INSERT INTO `job_grades` (job_name, grade, name, label, salary, skin_male, skin_
   ('banquier',4,'boss','Patron',0,'{}','{}')
 ;
 
-CREATE TABLE banking_historique (
-  id int(11) NOT NULL,
-  identifier varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
-  Montant varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT '2',
-  type varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT '',
-  time varchar(50) DEFAULT '0'
+--
+-- Structure de la table `banking_historique`
+--
+
+CREATE TABLE `banking_historique` (
+  `id` int(11) NOT NULL,
+  `identifier` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  `Montant` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT '2',
+  `type` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT '',
+  `time` varchar(50) DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-ALTER TABLE banking_historique
-  ADD PRIMARY KEY (id);
+--
+-- Index pour la table `banking_historique`
+--
+ALTER TABLE `banking_historique`
+  ADD PRIMARY KEY (`id`);
 
-ALTER TABLE banking_historique
-  MODIFY id int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=263;
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
+
+--
+-- AUTO_INCREMENT pour la table `banking_historique`
+--
+ALTER TABLE `banking_historique`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=277;
+COMMIT;
 
 
 INSERT INTO `items` (name, label) VALUES ('cartebanque', 'Carte Bancaire');
