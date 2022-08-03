@@ -37,7 +37,7 @@ function RetraitArgent()
 
         if type(amount) == 'number' then
             _TriggerServerEvent('eBanking:retirer', amount)
-            _TriggerServerEvent('eBanking:PutHistorique', GetPlayerServerId(playerPed), "Retrait", amount) 
+            _TriggerServerEvent('eBanking:PutHistorique', GetPlayerServerId(playerPed), "Retrait", amount, "ATM") 
             Wait(10)
             _TriggerServerEvent("eBanking:solde", action)
             GetBankingTransac()
@@ -55,7 +55,7 @@ function DepotArgent()
 
         if type(amount) == 'number' then
             _TriggerServerEvent('eBanking:deposer', amount)
-            _TriggerServerEvent('eBanking:PutHistorique', GetPlayerServerId(playerPed), "Dépot", amount) 
+            _TriggerServerEvent('eBanking:PutHistorique', GetPlayerServerId(playerPed), "Dépot", amount, "ATM") 
 
             Wait(10)
             _TriggerServerEvent("eBanking:solde", action)
