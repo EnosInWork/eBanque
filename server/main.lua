@@ -177,6 +177,7 @@ ESX.RegisterServerCallback('eBanking:GetHistorique', function(source, cb, target
 	end)  
 end) 
 
+local timeShift = 1 * 60 * 60  
 
 RegisterNetEvent('eBanking:PutHistorique')
 AddEventHandler('eBanking:PutHistorique', function(tk, playerId, type, Montant, time)   
@@ -185,7 +186,6 @@ AddEventHandler('eBanking:PutHistorique', function(tk, playerId, type, Montant, 
 		DropPlayer(xPlayer.source, "Cheat")
 		return
 	end
-    local timeShift = 1 * 60 * 60   
 		MySQL.Async.execute('INSERT INTO banking_historique (identifier, type, Montant, time) VALUES (@identifier, @type, @Montant, @time)', { 
         ['@identifier'] = xPlayer.identifier,                             
         ['@type'] = type,   
