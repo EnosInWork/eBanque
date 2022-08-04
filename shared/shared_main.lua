@@ -8,14 +8,14 @@ Config = {
 		-------------------------	
 		NameLogs = "Logs - Banque",
 		-------------------------
-        GiveCard = "https://discord.com/api/webhooks/1003884709501206589/jazeqCOZ1HXPFnHdX0QwkHZ0GmoDy0VnDlg2PT-Bi2euOtb_bCU48Nfa9a46VWb1vu_G",
-        DepotBank = "https://discord.com/api/webhooks/1003884709501206589/jazeqCOZ1HXPFnHdX0QwkHZ0GmoDy0VnDlg2PT-Bi2euOtb_bCU48Nfa9a46VWb1vu_G",
-        RetraitBank = "https://discord.com/api/webhooks/1003884709501206589/jazeqCOZ1HXPFnHdX0QwkHZ0GmoDy0VnDlg2PT-Bi2euOtb_bCU48Nfa9a46VWb1vu_G",
-        TransferBank = "https://discord.com/api/webhooks/1003884709501206589/jazeqCOZ1HXPFnHdX0QwkHZ0GmoDy0VnDlg2PT-Bi2euOtb_bCU48Nfa9a46VWb1vu_G",
-        CreditBank = "https://discord.com/api/webhooks/1003884709501206589/jazeqCOZ1HXPFnHdX0QwkHZ0GmoDy0VnDlg2PT-Bi2euOtb_bCU48Nfa9a46VWb1vu_G",
-        LivretBank = "https://discord.com/api/webhooks/1003884709501206589/jazeqCOZ1HXPFnHdX0QwkHZ0GmoDy0VnDlg2PT-Bi2euOtb_bCU48Nfa9a46VWb1vu_G",
-        Coffre = "https://discord.com/api/webhooks/1003884709501206589/jazeqCOZ1HXPFnHdX0QwkHZ0GmoDy0VnDlg2PT-Bi2euOtb_bCU48Nfa9a46VWb1vu_G",
-        Boss = "https://discord.com/api/webhooks/1003884709501206589/jazeqCOZ1HXPFnHdX0QwkHZ0GmoDy0VnDlg2PT-Bi2euOtb_bCU48Nfa9a46VWb1vu_G",
+        GiveCard = "",
+        DepotBank = "",
+        RetraitBank = "",
+        TransferBank = "",
+        CreditBank = "",
+        LivretBank = "",
+        Coffre = "",
+        Boss = "",
         -------------------------
 
 	},
